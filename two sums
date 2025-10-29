@@ -1,0 +1,20 @@
+def twoSum(nums, target):
+    # Dictionary to store number and its index
+    num_map = {}
+    
+    for i, num in enumerate(nums):
+        complement = target - num
+        
+        # Check if complement exists in dictionary
+        if complement in num_map:
+            return [num_map[complement], i]
+        
+        # Store current number and its index
+        num_map[num] = i
+    
+    return []  # No solution found
+
+# Test with the examples
+print(twoSum([2, 7, 11, 15], 9))  # Output: [0, 1]
+print(twoSum([3, 2, 4], 6))       # Output: [1, 2]
+print(twoSum([3, 3], 6))          # Output: [0, 1]
